@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viewer Count Overlay</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="viewer-count">Loading...</div>
+  <script>
+    async function updateViewerCount() {
+      const viewerCount = await window.viewerCountAPI.getViewerCount();
+      document.getElementById('viewer-count').textContent = `Viewers: ${viewerCount}`;
+    }
+
+    updateViewerCount();
+    setInterval(updateViewerCount, 60000); // Update every 60 seconds
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "name": "ghost-view",
+    "version": "1.0.0",
+    "description": "Twitch viewer count overlay",
+    "main": "main.js",
+    "scripts": {
+      "start": "electron ."
+    },
+    "dependencies": {
+      "axios": "^0.21.1",
+      "electron": "^11.2.1"
+    }
+  }
